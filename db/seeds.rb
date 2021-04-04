@@ -3,5 +3,15 @@
 #
 # Examples:
 #
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+#   movies = Movie.create([{ title: 'Star Wars' }, { title: 'Lord of the Rings' }])
+#   Job.create(title: 'Luke', movie: movies.first)
+
+Job.create(title: 'Java Engineer', location: 'San Diego, CA', description: 'asdasdasdasd')
+Job.create(title: 'Java Engineer', location: 'Santa Monica, CA', description: 'asdasdasdasd')
+Job.create(title: 'Java Engineer', location: 'San Francisco, CA', description: 'asdasdasdasd')
+Job.create(title: 'Java Engineer', location: 'Denver, CO', description: 'asdasdasdasd')
+Job.create(title: 'Java Engineer', location: 'Seattle, WA', description: 'asdasdasdasd')
+Job.create(title: 'Java Engineer', location: 'Miami, FL', description: 'asdasdasdasd')
+Job.create(title: 'Java Engineer', location: 'Dallas, TX', description: 'asdasdasdasd')
+Job.create(title: 'Java Engineer', location: 'New York, NY', description: 'asdasdasdasd')
+Job.create(title: 'Java Engineer', location: 'Baltimore, MD', description: 'asdasdasdasd')

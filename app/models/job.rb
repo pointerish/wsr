@@ -7,6 +7,8 @@ class Job < ApplicationRecord
   validates :location, presence: true
   validates :description, presence: true
 
+  has_rich_text :description
+
   def to_param
     hashid
   end

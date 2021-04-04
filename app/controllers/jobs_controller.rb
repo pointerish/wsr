@@ -2,7 +2,7 @@ class JobsController < ApplicationController
   before_action :authenticate_poster!, except: [:show, :index]
 
   def index
-    @jobs = Job.all
+    @jobs = Job.all.with_rich_text_description.order(created_at: :desc)
   end
 
   def show
