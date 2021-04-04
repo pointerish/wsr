@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>WsR! | Find Jobs</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <%= render 'layouts/default-nav' %>
+    <%= greet(request) %>
+    <div class="container p-auto m-auto">
+      <div class="grid grid-cols-1 gap-y-2 gap-x-4 mx-auto">
+        <%= yield %>
+      </div>
+    </div>
+  </body>
+</html>
