@@ -2,14 +2,15 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
-@import url('https://fonts.googleapis.com/css2?family=Train+One&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Train+One&display=swap");
 
 body {
   background-color: #f5f5f5;
 }
 
-.nav-color {
-  background-color: #ebd596;
+.nav-color,
+.booster {
+  background-color: #4495ad;
 }
 
 .actions-link {
@@ -17,27 +18,54 @@ body {
 }
 
 .post-job {
-  background-color: #e6564c;
+  background-color: #f4364c;
+  color: white;
 }
 
 .job-seekers {
-  background-color: #3ea899;
+  background-color: black;
+  color: white;
 }
 
 .post-job:hover {
-  background-color: #e37d76;
+  background-color: white;
+  color: black;
 }
 
 .job-seekers:hover {
-  background-color: #4ce6e1;
+  background-color: white;
+  color: black;
 }
 
 .wsr-identity-link {
   font-size: 3rem;
-  font-family: 'Train One', cursive;
+  font-family: "Train One", cursive;
 }
 
 .greet-text {
   text-decoration: underline;
   text-underline-offset: 0.5rem;
+}
+
+.spin {
+  font-family: "Train One", cursive;
+  -webkit-animation-name: spin;
+  -webkit-animation-duration: 2000ms;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-timing-function: ease-in;
+
+  -moz-animation-name: spin;
+  -moz-animation-duration: 2000ms;
+  -moz-animation-iteration-count: 1;
+  -moz-animation-timing-function: ease-in;
+
+  -ms-animation-name: spin;
+  -ms-animation-duration: 2000ms;
+  -ms-animation-iteration-count: 1;
+  -ms-animation-timing-function: ease-in;
+
+  animation-name: spin;
+  animation-duration: 2000ms;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in;
 }

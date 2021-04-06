@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Train+One&display=swap" rel="stylesheet">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
@@ -14,8 +15,8 @@
   <body>
     <%= render 'layouts/default-nav' %>
     <%= greet(request) %>
-    <div class="container p-auto m-auto">
-      <div class="grid grid-cols-1 gap-y-2 gap-x-4 mx-auto">
+    <div class="p-8 w-100">
+      <div class="grid grid-cols-1 gap-y-2 gap-x-4">
         <%= yield %>
       </div>
     </div>

@@ -1,13 +1,23 @@
-<nav class="container flex justify-between p-4 m-auto nav-color mb-4 sticky top-0 z-50">
+<nav class="flex flex-col justify-between p-4 nav-color mr-0 sticky top-0 z-50 w-100">
+  <div class="title-actions flex justify-between">
   <div class="wsr-identity">
     <%= link_to "Worksite Rocks!", root_path, class: "wsr-identity-link" %>
   </div>
   <div class="actions flex align-items">
-    <li class="hidden md:block p-2 m-3 flex align-items job-seekers rounded-lg content-center border-2 border-black shadow-inner transition duration-300 ease-in-out transform hover:-translate-x-1">
+    <li class="hidden md:block p-2 m-3 flex align-items job-seekers rounded-lg content-center transition duration-300 ease-in-out transform hover:-translate-x-1">
       <%= link_to "JOB SEEKERS", root_path, class: "actions-link hover:underline block" %>
     </li>
-    <li class="hidden md:block p-2 m-3 flex align-items post-job rounded-lg content-center border-2 border-black shadow-inner transition duration-300 ease-in-out transform hover:-translate-x-1">
+    <li class="hidden md:block p-2 m-3 flex align-items post-job rounded-lg content-center transition duration-300 ease-in-out transform hover:-translate-x-1">
       <%= link_to "POST A JOB!", new_job_path, class: "actions-link hover:underline block" %>
     </li>
   </div>
+  </div>
 </nav>
+<div class="hidden md:flex justify-center p-10 booster">
+    <div class="catch flex align-items p-10">
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras eget nisi quis purus porta tincidunt. Nam condimentum bibendum sapien nec venenatis</po>
+    </div>
+    <div class="image">
+      <%= image_tag "map.svg", size: "100x100" %>
+    </div>
+  </div>
