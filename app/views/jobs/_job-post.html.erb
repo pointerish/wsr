@@ -1,18 +1,18 @@
 <div class="bg-white p-1 rounded-lg shadow-lg">
-    <div class="flex">
-        <div class="image">
-            <%= image_tag 'company.svg', class: "w-14 h-14 p-2 md:w-20 md:h-20" %>
-        </div>
-        <div class="job-details flex flex-col">
-            <div class="job-details-title">
-                <%= job.title %>
-            </div>
-            <div class="job-details-addendum">
-                <small class="sm:text-opacity-text-50 md:text-opacity-50"><%= job.location %> | <%= job.job_type %> | <%= job.salary %></small>
-            </div>
-        </div>
+  <div class="flex">
+    <div class="image">
+      <%= image_tag 'company.svg', class: "w-14 h-14 p-2 md:w-20 md:h-20" %>
     </div>
-    <div class="job-description">
-        <%= job.description %>
+    <div class="job-details flex flex-col">
+      <div class="job-details-title">
+        <%= job.title %>
+      </div>
+      <div class="job-details-addendum">
+        <small class="sm:text-opacity-text-50 md:text-opacity-50"><%= job.location %> | <%= job.job_type %> | <%= job.salary %></small>
+      </div>
     </div>
+  </div>
+  <div class="job-description">
+    <%= job.description %>
+  </div>
 </div>

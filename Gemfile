@@ -50,3 +50,5 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem "devise", "~> 4.7"
 
 gem "hashid-rails", "~> 1.4"
+
+gem "email_validator", "~> 2.2"
