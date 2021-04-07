@@ -38,8 +38,13 @@ body {
 }
 
 .wsr-identity-link {
-  font-size: 3rem;
   font-family: "Train One", cursive;
+}
+
+.wsr-identity-link:hover {
+  text-decoration: underline;
+  text-underline-offset: 0.7rem;
+  text-decoration-color: #f4364c;
 }
 
 .greet-text {
