@@ -3,7 +3,6 @@ class JobsController < ApplicationController
 
   def index
     @jobs = Job.all.with_rich_text_description.order(created_at: :desc)
-    @subscriber = Subscriber.new
   end
 
   def show

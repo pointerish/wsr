@@ -52,3 +52,5 @@ gem "devise", "~> 4.7"
 gem "hashid-rails", "~> 1.4"
 
 gem "email_validator", "~> 2.2"
+
+gem "hotwire-rails", "~> 0.1.3"

@@ -1,4 +1,4 @@
-class SubscriberController < ApplicationController
+class SubscribersController < ApplicationController
   def new
     @subscriber = Subscriber.new
   end
@@ -8,6 +8,10 @@ class SubscriberController < ApplicationController
     if @subscriber.save
       redirect_back fallback_location: @subscriber
       flash[:notice] = 'Okay! Rocky will meow job recommendations at you from time to time!'
+    else
+      redirect_to root_path
+      flash[:notice] = 'Error Error Error!'
+    end
   end
 
   def destroy
