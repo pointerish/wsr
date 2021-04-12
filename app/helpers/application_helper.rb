@@ -4,4 +4,12 @@ module ApplicationHelper
       render 'layouts/greet'
     end
   end
+
+  def what_nav(request)
+    if request.path.include?("/jobs/new")
+      render 'layouts/poster-nav'
+    else
+      render 'layouts/default-nav'
+    end
+  end
 end

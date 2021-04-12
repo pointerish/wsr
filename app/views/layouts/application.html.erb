@@ -13,15 +13,17 @@
   </head>
 
   <body>
-    <%= render 'layouts/default-nav' %>
+    <%= what_nav(request) %>
     <%= greet(request) %>
     <div class="p-2 md:p-8 w-100">
       <div class="grid grid-cols-1 gap-y-2 gap-x-4">
         <%= yield %>
       </div>
     </div>
-    <div class="footer booster">
-      <div class="copyright text-center p-6">© <%= Time.zone.now.year %> worksite.rocks - All Rights Reserved</div>
-    </div>
+    <% if !request.path.include?('/jobs/new') %>
+      <div class="footer booster sticky bottom-0">
+        <div class="copyright text-center p-6">© <%= Time.zone.now.year %> worksite.rocks - All Rights Reserved</div>
+      </div>
+    <% end %>
   </body>
 </html>
