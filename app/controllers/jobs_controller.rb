@@ -14,7 +14,7 @@ class JobsController < ApplicationController
   end
 
   def create
-    @job = Job.create(job_params)
+    @job = current_poster.jobs.build(job_params)
     if @job.save
       redirect_to root_path
     end
@@ -34,6 +34,10 @@ class JobsController < ApplicationController
   end
 
   def destroy
+  end
+
+  def poster_jobs
+    @jobs = current_poster.jobs
   end
 
   private

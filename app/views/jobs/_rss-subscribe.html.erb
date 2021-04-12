@@ -10,7 +10,7 @@
     </div>
     <%= form_with url: "/subscribers/create" do |f| %>
       <div class="justify-center items-center p-10">
-        <%= f.email_field :email, autofocus: false, autocomplete: "email", class: 'shadow appearance-none border rounded w-80 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline', placeholder: 'rocky@rocks.com' %>
+        <%= f.email_field :email, autofocus: false, autocomplete: "email", class: 'shadow appearance-none border rounded w-80 md:w-40 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline', placeholder: 'rocky@rocks.com' %>
         <%= f.submit "Send me jobs!", class: "primary-btn rounded mt-4 p-2 md:p-2" %>
       </div>
     <% end %>
