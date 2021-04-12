@@ -1,20 +1,28 @@
 <%= turbo_frame_tag :subscribers do %>
-<div class="bg-white p-1 rounded-lg shadow-lg">
-    <%= form_with url: "/subscribers/new" do |f| %>
-    <div class="flex flex-col justify-center items-center">
-        <%= f.label "Enter your email:", class: "text-sm md:text-xl mb-2 mt-4" %>
-        <%= f.email_field :title, autofocus: true, autocomplete: "email", class: 'rounded' %>
-        <%= f.submit "Send me jobs!", class: "bg-green rounded mt-4 p-2 md:p-2 text-white hover:text-black" %>
+<div class="bg-white p-4 rounded-lg shadow-lg" id="subscriber">
+  <div class="flex justify-between p-2" data-controller="subscriber">
+    <h3 class="text-center text-2xl font-semibold">Subscribe to Worksite Rocks' RSS feed!</h3>
+    <div class="close-rss-subscriber" data-action="click->subscriber#removeSubscriber">X</div>
+  </div>
+  <div class="flex align-items justify-start">
+    <div class="image flex align-items">
+      <%= image_tag 'wolf.svg', class: "md:w-40 md:h-40" %>
     </div>
+    <%= form_with url: "/subscribers/create" do |f| %>
+      <div class="justify-center items-center p-10">
+        <%= f.email_field :email, autofocus: false, autocomplete: "email", class: 'shadow appearance-none border rounded w-80 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline', placeholder: 'rocky@rocks.com' %>
+        <%= f.submit "Send me jobs!", class: "primary-btn rounded mt-4 p-2 md:p-2" %>
+      </div>
     <% end %>
-    <div class="flex flex-col justify-center items-center">
-        <% flash.each do |type, msg| %>
-        <div class="bg-green-100 border-2 border-green-500 text-green-700 mt-10 flex align-items" role="alert">
-            <div class="pt-4 pl-2">
-                <p id="flash-message"><%= msg %></p>
-            </div>
+  </div>
+  <div class="flex flex-col justify-center items-center" data-controller="subscriber">
+    <% flash.each do |type, msg| %>
+      <div class="bg-green-100 border-2 border-green-500 text-green-700 flex align-items rounded-lg" role="alert">
+        <div class="p-4">
+          <p id="flash-message"><%= msg %></p>
         </div>
-        <% end %>
-    </div>
+      </div>
+    <% end %>
+  </div>
 </div>
 <% end %>

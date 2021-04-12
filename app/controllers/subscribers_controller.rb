@@ -6,11 +6,11 @@ class SubscribersController < ApplicationController
   def create
     @subscriber = Subscriber.create(subscriber_params)
     if @subscriber.save
-      redirect_back fallback_location: @subscriber
+      redirect_to root_path
       flash[:notice] = 'Okay! Rocky will meow job recommendations at you from time to time!'
     else
       redirect_to root_path
-      flash[:notice] = 'Error Error Error!'
+      flash[:notice] = 'Oh! You forgot to tell me you email.'
     end
   end
 
@@ -21,6 +21,6 @@ class SubscribersController < ApplicationController
 
   private
     def subscriber_params
-      params.require(:subscriber).permit(:email)
+      params.permit(:email)
     end
 end

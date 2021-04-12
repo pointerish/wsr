@@ -4,8 +4,12 @@
     <%= f.text_field :title, autofocus: true, autocomplete: "name", class: 'rounded' %>
     <%= f.label :location, class: "text-sm md:text-xl mb-2 mt-4" %>
     <%= f.text_field :location, autofocus: true, autocomplete: "name", class: 'rounded' %>
+    <%= f.label :salary, class: "text-sm md:text-xl mb-2 mt-4" %>
+    <%= f.text_field :salary, autofocus: true, autocomplete: "name", class: 'rounded' %>
+    <%= f.label :job_type, class: "text-sm md:text-xl mb-2 mt-4" %>
+    <%= f.text_field :job_type, autofocus: true, autocomplete: "name", class: 'rounded' %>
     <%= f.label :description, class: "text-sm md:text-xl mb-2 mt-4" %>
     <%= f.rich_text_area :description, autofocus: true, autocomplete: "name", class: 'rounded' %>
-    <%= f.submit "Post!", class: "bg-green rounded mt-4 p-2 md:p-2 text-white hover:text-black" %>
+    <%= f.submit "Post!", class: "primary-btn rounded mt-4 p-2 md:p-2 hover:border-lg" %>
 </div>
 <% end %>

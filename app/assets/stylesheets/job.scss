@@ -17,7 +17,7 @@ body {
   text-decoration-color: #ad8207;
 }
 
-.post-job {
+.primary-btn {
   background-color: #f4364c;
   color: white;
 }
@@ -27,9 +27,9 @@ body {
   color: white;
 }
 
-.post-job:hover {
-  background-color: white;
-  color: black;
+.primary-btn:hover {
+  background-color: black;
+  cursor: pointer;
 }
 
 .job-seekers:hover {
@@ -73,4 +73,8 @@ body {
   animation-duration: 2000ms;
   animation-iteration-count: 1;
   animation-timing-function: ease-in;
+}
+
+.close-rss-subscriber:hover {
+  cursor: pointer;
 }

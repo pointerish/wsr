@@ -3,7 +3,7 @@
     <div class="image">
       <%= image_tag 'company.svg', class: "w-14 h-14 p-2 md:w-20 md:h-20" %>
     </div>
-    <div class="job-details flex flex-col">
+    <div class="job-details flex flex-col justify-center">
       <div class="job-details-title">
         <%= job.title %>
       </div>
@@ -12,7 +12,8 @@
       </div>
     </div>
   </div>
-  <div class="job-description">
+  <hr/>
+  <div class="job-description p-4">
     <%= job.description %>
   </div>
 </div>
