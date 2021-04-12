@@ -20,10 +20,12 @@
         <%= yield %>
       </div>
     </div>
+    <% if false %>
     <% if !request.path.include?('/jobs/new') %>
       <div class="footer booster sticky bottom-0">
         <div class="copyright text-center p-6">© <%= Time.zone.now.year %> worksite.rocks - All Rights Reserved</div>
       </div>
+    <% end %>
     <% end %>
   </body>
 </html>

@@ -20,7 +20,17 @@ class JobsController < ApplicationController
     end
   end
 
+  def edit
+    @job = Job.find(params[:id])
+  end
+
   def update
+    @job = Job.find params[:id]
+    if @job.update(job_params)
+      redirect_to @job
+    else
+      redirect_to @job
+    end
   end
 
   def destroy
@@ -28,6 +38,6 @@ class JobsController < ApplicationController
 
   private
     def job_params
-      params.require(:job).permit(:title, :location, :description)
+      params.require(:job).permit(:title, :location, :description, :salary, :job_type)
     end
 end
