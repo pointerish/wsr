@@ -1,5 +1,4 @@
-<div class="flex flex-col justify-center items-center">
-    <h1 class="text-5xl">Add new job posting</h1>
+<div class="bg-white p-4 rounded-lg shadow-lg">
+    <div class="text-4xl m-y-4">Add new job posting</div>
+    <%= render 'form', job: @job %>
 </div>
-
-<%= render 'form', job: @job %>
