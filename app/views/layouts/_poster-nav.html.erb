@@ -8,6 +8,9 @@
     </div>
     <div class="actions flex align-items">
       <li class="hidden md:block p-2 m-3 flex align-items job-seekers rounded-lg content-center transition duration-300 ease-in-out transform hover:-translate-x-1">
+        <%= link_to "LOGOUT", destroy_poster_session_path, method: :delete, class: "actions-link hover:underline block" %>
+      </li>
+      <li class="hidden md:block p-2 m-3 flex align-items job-seekers rounded-lg content-center transition duration-300 ease-in-out transform hover:-translate-x-1">
         <%= link_to "MY JOBS", myjobs_url, class: "actions-link hover:underline block" %>
       </li>
       <li class="hidden md:block p-2 m-3 flex align-items primary-btn rounded-lg content-center transition duration-300 ease-in-out transform hover:-translate-x-1">

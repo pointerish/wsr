@@ -1,0 +1,2 @@
+- Fix issue where RSS Subscribe form is capturing undesired flash messages
+- Add complete functionality to register applicants

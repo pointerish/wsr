@@ -22,6 +22,10 @@
             <div class="primary-btn p-6 rounded-lg"><%= link_to "Delete This Job", destroy_url(job), class: 'font-semibold', id: 'delete-job' %></div>
         </div>
         </div>
+        <% else %>
+        <div class="flex apply-button px-2">
+          <div class="primary-btn p-6 rounded-lg font-semibold">Apply</div>
+        </div>
         <% end %>
     </div>
     <hr />
