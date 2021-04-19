@@ -1,26 +1,31 @@
 <div class="bg-white p-1 rounded-lg shadow-lg">
-  <div class="flex justify-between">
-    <div class="details flex">
-      <div class="image">
-        <%= image_tag 'company.svg', class: "w-14 h-14 p-2 md:w-20 md:h-20" %>
-      </div>
-      <div class="job-details flex flex-col justify-center">
-        <div class="job-details-title text-4xl font-semibold">
-          <%= job.title %>
+    <div class="flex justify-between">
+        <div class="details flex">
+            <div class="image">
+                <%= image_tag 'company.svg', class: "w-14 h-14 p-2 md:w-20 md:h-20" %>
+            </div>
+            <div class="job-details flex flex-col justify-center">
+                <div class="job-details-title text-4xl font-semibold">
+                    <%= job.title %>
+                </div>
+                <div class="job-details-addendum">
+                    <small class="sm:text-opacity-text-50 md:text-opacity-50"><%= job.location %> | <%= job.job_type %> | <%= job.salary %></small>
+                </div>
+            </div>
         </div>
-        <div class="job-details-addendum">
-          <small class="sm:text-opacity-text-50 md:text-opacity-50"><%= job.location %> | <%= job.job_type %> | <%= job.salary %></small>
+        <% if poster_signed_in? %>
+        <div class="flex">
+        <div class="flex poster-edit px-2">
+            <div class="primary-btn p-6 rounded-lg"><%= link_to "Edit This Job", edit_job_path(job), class: 'font-semibold' %></div>
         </div>
-      </div>
+        <div class="flex poster-delete px-2">
+            <div class="primary-btn p-6 rounded-lg"><%= link_to "Delete This Job", destroy_url(job), class: 'font-semibold', id: 'delete-job' %></div>
+        </div>
+        </div>
+        <% end %>
     </div>
-    <% if poster_signed_in? %>
-      <div class="flex poster-edit">
-        <div class="primary-btn p-6 rounded-lg"><%= link_to "Edit This Job", edit_job_path(job), class: 'font-semibold' %></div>
-      </div>
-    <% end %>
-  </div>
-  <hr/>
-  <div class="job-description p-4">
-    <%= job.description %>
-  </div>
+    <hr />
+    <div class="job-description p-4">
+        <%= job.description %>
+    </div>
 </div>

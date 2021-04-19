@@ -7,7 +7,7 @@ class SubscribersController < ApplicationController
     @subscriber = Subscriber.create(subscriber_params)
     if @subscriber.save
       redirect_to root_path
-      flash[:notice] = 'Okay! Rocky will meow job recommendations at you from time to time!'
+      flash[:notice] = 'Okay! Rocky will meow you job recommendations at you from time to time!'
     else
       redirect_to root_path
       flash[:notice] = 'Oh! You forgot to tell me you email.'

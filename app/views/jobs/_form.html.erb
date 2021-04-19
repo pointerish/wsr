@@ -1,25 +1,25 @@
 <%= turbo_frame_tag :jobs do %>
+<div class="flex flex-col justify-center items-center mb-6">
+    <% flash.each do |type, msg| %>
+    <div class="bg-green-100 border-2 border-green-500 text-green-700 flex align-items rounded-lg" role="alert">
+        <div class="p-4">
+            <p id="flash-message"><%= msg %></p>
+        </div>
+    </div>
+    <% end %>
+</div>
 <%= form_with model: job do |f| %>
-<div class="flex flex-col p-y-6">
-    <div class="grid grid-cols-1 p-y-4">
+<div class="flex flex-col py-6">
+    <div class="grid grid-cols-1 py-4">
         <div>
-            <%= f.text_field :title, autofocus: true, autocomplete: "name", class: 'p-y-4 shadow appearance-none border rounded w-80 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline', placeholder: 'Job Title' %>
-            <%= f.text_field :location, autofocus: true, autocomplete: "name", class: 'p-y-2 shadow appearance-none border rounded w-80 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline', placeholder: 'Location' %>
-            <%= f.text_field :salary, autofocus: true, autocomplete: "name", class: 'p-y-2 shadow appearance-none border rounded w-80 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline', placeholder: 'Salary' %>
-            <%= f.text_field :job_type, autofocus: true, autocomplete: "name", class: 'p-y-2 shadow appearance-none border rounded w-80 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline', placeholder: 'Job Type' %>
+            <%= f.text_field :title, autofocus: true, autocomplete: "name", class: 'shadow appearance-none border rounded w-80 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline', placeholder: 'Job Title' %>
+            <%= f.text_field :location, autofocus: true, autocomplete: "name", class: 'py-2 shadow appearance-none border rounded w-80 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline', placeholder: 'Location' %>
+            <%= f.text_field :salary, autofocus: true, autocomplete: "name", class: 'py-2 shadow appearance-none border rounded w-80 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline', placeholder: 'Salary' %>
+            <%= f.text_field :job_type, autofocus: true, autocomplete: "name", class: 'py-2 shadow appearance-none border rounded w-80 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline', placeholder: 'Job Type' %>
         </div>
     </div>
     <%= f.rich_text_area :description, autofocus: true, autocomplete: "name", class: 'shadow appearance-none border rounded w-full h-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline', placeholder: 'Job Description' %>
     <%= f.submit "Post!", class: "primary-btn rounded mt-4 p-2 md:p-2 hover:border-lg" %>
 </div>
-<div class="flex flex-col justify-center items-center">
-    <% flash.each do |type, msg| %>
-      <div class="bg-green-100 border-2 border-green-500 text-green-700 flex align-items rounded-lg" role="alert">
-        <div class="p-4">
-          <p id="flash-message"><%= msg %></p>
-        </div>
-      </div>
-    <% end %>
-  </div>
 <% end %>
 <% end %>

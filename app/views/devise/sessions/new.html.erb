@@ -1,26 +1,39 @@
-<h2>Log in</h2>
-
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "current-password" %>
-  </div>
-
-  <% if devise_mapping.rememberable? %>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
+<div class='flex flex-col justify-center items-center md:mb-4'>
+    <% flash.each do |type, msg| %>
+    <div class='bg-yellow-100 border-2 border-yellow-500 text-yellow-700 flex align-items rounded-lg' role='alert'>
+        <div class='p-4'>
+            <p id='flash-message'><%= msg %></p>
+        </div>
     </div>
-  <% end %>
+    <% end %>
+</div>
+</div>
+<div class='bg-white p-4 rounded-lg shadow-lg md:w-120'>
+    <div class='text-4xl my-4 text-center'>Log In</div>
+    <div class="text-center">
 
-  <div class="actions">
-    <%= f.submit "Log in" %>
-  </div>
-<% end %>
+        <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+        <div class='field my-4'>
+            <%= f.email_field :email, autofocus: true, class: 'shadow appearance-none border rounded w-80 md:w-80 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline', placeholder: 'email@example.com' %>
+        </div>
 
-<%= render "devise/shared/links" %>
+        <div class='field my-4'>
+            <%= f.password_field :password, class: 'shadow appearance-none border rounded w-80 md:w-80 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline' %>
+        </div>
+
+        <% if devise_mapping.rememberable? %>
+        <div class='field'>
+            <%= f.check_box :remember_me %>
+            <%= f.label :remember_me %>
+        </div>
+        <% end %>
+
+        <div class='actions mb-4'>
+            <%= f.submit 'Let me in!', class: 'primary-btn rounded mt-4 p-2 md:p-2' %>
+        </div>
+        <% end %>
+
+
+        <%= render 'devise/shared/links' %>
+    </div>
+</div>

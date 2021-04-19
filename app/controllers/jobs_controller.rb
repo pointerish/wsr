@@ -16,7 +16,10 @@ class JobsController < ApplicationController
   def create
     @job = current_poster.jobs.build(job_params)
     if @job.save
-      redirect_to root_path
+      redirect_to @job
+    else
+      redirect_back fallback_location: @job
+      flash[:alert] = 'Check the job details provided! Something is wrong!'
     end
   end
 
@@ -34,6 +37,9 @@ class JobsController < ApplicationController
   end
 
   def destroy
+    @job = Job.find params[:id]
+    @job.destroy
+    redirect_to myjobs
   end
 
   def poster_jobs

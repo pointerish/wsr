@@ -1,15 +1,15 @@
 module ApplicationHelper
-  def greet(request)
-    if request.path.include?("") && !request.path.include?("/jobs") && !request.path.include?("new")
+  def greet
+    if current_page?(root_path)
       render 'layouts/greet'
     end
   end
 
-  def what_nav(request)
-    if request.path.include?("/jobs/new")
-      render 'layouts/poster-nav'
-    else
+  def what_nav
+    if current_page?(root_path) || current_page?(jobs_path)
       render 'layouts/default-nav'
+    else
+      render 'layouts/poster-nav'
     end
   end
 end
