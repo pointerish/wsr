@@ -32,14 +32,15 @@ class JobsController < ApplicationController
     if @job.update(job_params)
       redirect_to @job
     else
-      redirect_to @job
+      redirect_back fallback_location: @job
+      flash[:alert] = 'Check the job details provided! Something is wrong!'
     end
   end
 
   def destroy
-    @job = Job.find params[:id]
+    @job = Job.find params[:hashid]
     @job.destroy
-    redirect_to myjobs
+    redirect_to myjobs_url
   end
 
   def poster_jobs
