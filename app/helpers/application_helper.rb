@@ -6,10 +6,10 @@ module ApplicationHelper
   end
 
   def what_nav
-    if current_page?(root_path) || current_page?(jobs_path)
-      render 'layouts/default-nav'
-    else
+    if poster_signed_in?
       render 'layouts/poster-nav'
+    else
+      render 'layouts/default-nav'
     end
   end
 end

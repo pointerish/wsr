@@ -1,15 +1,15 @@
 <%= turbo_frame_tag :subscribers do %>
 <div class="bg-white p-4 rounded-lg shadow-lg" id="subscriber">
-  <div class="flex justify-between p-2" data-controller="subscriber">
-    <h3 class="text-center text-2xl font-semibold">Subscribe to Worksite Rocks' RSS feed!</h3>
-    <div class="close-rss-subscriber" data-action="click->subscriber#removeSubscriber">X</div>
+  <div class="flex justify-center p-2" data-controller="subscriber">
+    <h3 class="text-center text-2xl font-semibold pr-3">Subscribe to Worksite Rocks' RSS feed!</h3>
+    <div class="close-rss-subscriber pl-5" data-action="click->subscriber#removeSubscriber">X</div>
   </div>
-  <div class="flex align-items justify-start">
+  <div class="flex align-items justify-center">
     <div class="image flex align-items">
       <%= image_tag 'wolf.svg', class: "md:w-40 md:h-40" %>
     </div>
     <%= form_with url: "/subscribers/create" do |f| %>
-      <div class="justify-center items-center p-10">
+      <div class="justify-center items-center pt-10 pr-10 pb-10 pl-3">
         <%= f.email_field :email, autofocus: false, autocomplete: "email", class: 'shadow appearance-none border rounded w-80 md:w-40 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline', placeholder: 'rocky@rocks.com' %>
         <%= f.submit "Send me jobs!", class: "primary-btn rounded mt-4 p-2 md:p-2" %>
       </div>
