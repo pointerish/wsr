@@ -6,7 +6,7 @@ class JobsController < ApplicationController
   end
 
   def show
-    @job = Job.find(params[:hashid])
+    @job = Job.find(params[:job_hashid])
   end
 
   def new
@@ -38,7 +38,7 @@ class JobsController < ApplicationController
   end
 
   def destroy
-    @job = Job.find params[:hashid]
+    @job = Job.find params[:job_hashid]
     @job.destroy
     redirect_to myjobs_url
   end

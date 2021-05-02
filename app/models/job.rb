@@ -2,7 +2,7 @@ class Job < ApplicationRecord
   include Hashid::Rails
 
   has_one :poster
-  has_many :applicants
+  has_many :job_applicants
 
   validates :title, presence: true
   validates :location, presence: true
