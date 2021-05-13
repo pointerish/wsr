@@ -28,6 +28,7 @@ services:
         build:
             context: .
         restart: always
+        command: bash -c "bin/rails db:migrate && bin/rails server"
         ports:
             - 3000:3000
         depends_on:
