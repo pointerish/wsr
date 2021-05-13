@@ -19,13 +19,6 @@ require "sprockets/railtie"
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
-Dotenv::Railtie.load
-
-DB_NAME = ENV['DB_NAME']
-DB_USER = ENV['DB_USER']
-DB_PASSWORD = ENV['DB_PASSWORD']
-
-
 module Wsr
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.

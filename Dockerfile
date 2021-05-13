@@ -7,3 +7,5 @@ RUN bash -c "curl https://raw.githubusercontent.com/creationix/nvm/master/instal
     source ~/.bashrc && \
     nvm install 12.20.2 && \
     gem install rails && bundle install && npm install"
+
+EXPOSE 3000
