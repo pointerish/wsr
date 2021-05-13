@@ -1,0 +1,45 @@
+version: '3'
+
+services:
+    postgresql:
+        image: postgres:11-alpine
+        restart: always
+        environment:
+          - POSTGRES_DB=${DB_NAME}
+          - POSTGRES_USER=${DB_USER}
+          - POSTGRES_PASSWORD=${DB_PASSWORD}
+          - PGDATA=/var/lib/postgresql/data
+        volumes:
+          - db-data:/var/lib/postgresql/data
+        ports:
+          - 5432:5432
+        networks:
+          - wsr_network
+    redis:
+        image: redis:alpine
+        restart: always
+        ports:
+            - 6379:6379
+        depends_on:
+            - postgresql
+        networks:
+            - wsr_network
+    web_app:
+        build:
+            context: .
+        restart: always
+        ports:
+            - 3000:3000
+        depends_on:
+            - postgresql
+            - redis
+        networks:
+            - wsr_network
+
+
+volumes:
+    db-data:
+
+networks:
+    wsr_network:
+        driver: bridge
