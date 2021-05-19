@@ -2,7 +2,7 @@ class JobApplicantsController < ApplicationController
   before_action :authenticate_job_applicant!
 
   def show
-    @job_applicant = JobApplicant.find_by_hashid params[:hashid]
+    @job_applicant = JobApplicant.find_by_hashid params[:job_applicant_hashid]
   end
 
   def edit

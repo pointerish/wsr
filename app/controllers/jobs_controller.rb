@@ -6,7 +6,7 @@ class JobsController < ApplicationController
   end
 
   def show
-    @job = Job.find(params[:job_hashid])
+    @job = Job.find(params[:hashid])
   end
 
   def new

@@ -8,6 +8,8 @@ module ApplicationHelper
   def what_nav
     if poster_signed_in?
       render 'layouts/poster-nav'
+    elsif job_applicant_signed_in?
+      render 'layouts/job-applicant-nav'
     else
       render 'layouts/default-nav'
     end

@@ -9,6 +9,8 @@ class JobApplicant < ApplicationRecord
   # validates :name, presence: true
   validates :email, presence: true, email: true
 
+  has_many :job_applications
+
   def to_param
     hashid
   end
